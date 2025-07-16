@@ -5,8 +5,8 @@ import 'package:url_launcher/url_launcher.dart'; // Import for launching URLs
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
 
-  final String githubUrl = 'https://github.com/your-username/Food-Truck-Finder'; // Replace with your GitHub URL
-
+  final String githubUrl = 'https://github.com/Man-Nam/Food-Truck-Finder.git';
+  final String githubUrlLaravel = 'https://github.com/Man-Nam/Food-Truck-Finder-Backend.git';
   Future<void> _launchUrl() async {
     final Uri url = Uri.parse(githubUrl);
     if (!await launchUrl(url)) {
@@ -70,6 +70,22 @@ class AboutScreen extends StatelessWidget {
               onTap: _launchUrl,
               child: Text(
                 githubUrl,
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: Colors.blue,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            Text(
+              'Application Website (backend):',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            InkWell(
+              onTap: _launchUrl,
+              child: Text(
+                githubUrlLaravel,
                 style: const TextStyle(
                   fontSize: 16,
                   color: Colors.blue,
